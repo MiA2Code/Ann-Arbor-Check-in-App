@@ -1,8 +1,13 @@
 import React from 'react';
-import './css/App.css';
+import { MapViewDiv } from './components/arcgis/MapViewDiv';
+import './css/globel.scss';
 
 function App() {
-	return <div className="App">{process.env.REACT_APP_TESTING}</div>;
+	return (
+		<div className="App">
+			<MapViewDiv />
+		</div>
+	);
 }
 
 export default App;
