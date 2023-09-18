@@ -4,6 +4,14 @@ declare global {
 			NODE_ENV: 'development' | 'production' | 'test';
 
 			REACT_APP_TESTING: string;
+
+			REACT_APP_MAP_DEFAULT_ZOOM: number;
+			REACT_APP_MAP_DEFAULT_CENTER_X: number;
+			REACT_APP_MAP_DEFAULT_CENTER_Y: number;
+			REACT_APP_MAP_DEFAULT_EXTEND_MAX_X: number;
+			REACT_APP_MAP_DEFAULT_EXTEND_MIN_X: number;
+			REACT_APP_MAP_DEFAULT_EXTEND_MAX_y: number;
+			REACT_APP_MAP_DEFAULT_EXTEND_MIN_Y: number;
 		}
 	}
 }

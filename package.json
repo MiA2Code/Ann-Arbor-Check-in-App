@@ -55,6 +55,9 @@
 			"last 1 safari version"
 		]
 	},
+	"overrides": {
+		"typescript": "^5.2.2"
+	},
 	"devDependencies": {
 		"@storybook/preset-typescript": "^3.0.0",
 		"@typescript-eslint/eslint-plugin": "^6.7.0",
