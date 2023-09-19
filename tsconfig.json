@@ -14,15 +14,7 @@
 		"resolveJsonModule": true,
 		"isolatedModules": true,
 		"noEmit": true,
-		"jsx": "react-jsx"
+		"jsx": "preserve"
 	},
-	"include": [
-		"**/*.ts",
-		"**/*.tsx",
-		"src",
-		"src/components",
-		"src/custom.d.ts",
-		"src/environment.d.ts",
-		".eslintrc.json"
-	]
+	"include": ["src", "src/custom.d.ts", "src/environment.d.ts"]
 }
