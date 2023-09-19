@@ -7,17 +7,17 @@ trigger:
 - main
 
 pool:
-- task: AzureRmWebAppDeployment@4
-  inputs:
-    ConnectionType: 'AzureRM'
-    azureSubscription: 'Azure subscription 1(8e39bac2-59b4-46b6-9ca2-2113cc89b277)'
-    appType: 'webAppLinux'
-    WebAppName: 'aacia'
-    deployToSlotOrASE: true
-    ResourceGroupName: 'MiA2Code-AACIA'
-    SlotName: 'production'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
-    RuntimeStack: 'NODE|18-lts'
+ task: AzureRmWebAppDeployment@4
+ inputs:
+  ConnectionType: 'AzureRM'
+  azureSubscription: 'Azure subscription 1(8e39bac2-59b4-46b6-9ca2-2113cc89b277)'
+  appType: 'webAppLinux'
+  WebAppName: 'aacia'
+  deployToSlotOrASE: true
+  ResourceGroupName: 'MiA2Code-AACIA'
+  SlotName: 'production'
+  packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+  RuntimeStack: 'NODE|18-lts'
 
 steps:
 - task: NodeTool@0
