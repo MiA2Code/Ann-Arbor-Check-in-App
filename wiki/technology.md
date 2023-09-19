@@ -7,6 +7,14 @@
 | JavaScript | Scripting language mainly used in browsers       |                 |
 | HTML/CSS   | Markup and styling languages for web development |                 |
 
+### Recommended VS Code Extensions
+
+| Extension           | Description                  |
+| ------------------- | ---------------------------- |
+| ENV                 | javscript env file formattor |
+| Pretter             | code formattor               |
+| Markdown All in One | md file formattor            |
+
 ##### create new project
 
 ```
