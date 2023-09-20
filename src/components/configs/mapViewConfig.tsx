@@ -8,9 +8,20 @@ export class BaseView {
 		this.view = new MapView({
 			map,
 			container,
-			zoom: process.env.REACT_APP_MAP_DEFAULT_ZOOM,
-			center: [-83.732124, 42.279594],
-			// extent: new Extent()
+			zoom: 13,
+			center: [
+				process.env.REACT_APP_MAP_DEFAULT_CENTER_X,
+				process.env.REACT_APP_MAP_DEFAULT_CENTER_Y,
+			],
+			constraints: {
+				minZoom: 12,
+				geometry: new Extent({
+					xmax: process.env.REACT_APP_MAP_DEFAULT_EXTEND_MAX_X,
+					xmin: process.env.REACT_APP_MAP_DEFAULT_EXTEND_MIN_X,
+					ymax: process.env.REACT_APP_MAP_DEFAULT_EXTEND_MAX_Y,
+					ymin: process.env.REACT_APP_MAP_DEFAULT_EXTEND_MIN_Y,
+				}),
+			},
 		});
 	}
 
