@@ -9,7 +9,6 @@ trigger:
 variables:
   azureSubscription: 'Azure subscription 1(8e39bac2-59b4-46b6-9ca2-2113cc89b277)'
   webAppName: 'a2-check-in'
-  environmentName: 'a2-check-in'
 stages:
   - stage: Build
     displayName: Build stage
@@ -46,17 +45,19 @@ stages:
     jobs:
       - deployment: Deploy
         displayName: Deploy
-        environment: '$(environmentName)'
         pool: local-host
         strategy:
           runOnce:
             deploy:
               steps:
-                - task: AzureWebApp@1
-                  displayName: 'Azure Web App Deploy: $(webapp-name)'
+                - task: AzureRmWebAppDeployment@4
                   inputs:
-                    azureSubscription: '$(azureSubscription)'
-                    appType: 'webAppLinux'
-                    appName: '$(webAppName)'
-                    package: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
+                    ConnectionType: 'AzureRM'
+                    azureSubscription: 'Azure subscription 1(8e39bac2-59b4-46b6-9ca2-2113cc89b277)'
+                    appType: 'webApp'
+                    WebAppName: 'a2-check-in'
+                    deployToSlotOrASE: true
+                    ResourceGroupName: 'MiA2Code-AACIA'
+                    SlotName: 'production'
+                    packageForLinux: '$(Pipeline.Workspace)/drop/$(Build.BuildId).zip'
                     startUpCommand: 'pm2 serve /home/site/wwwroot --spa --no-daemon'
