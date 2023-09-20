@@ -9,7 +9,6 @@ trigger:
 variables:
   azureSubscription: 'Azure subscription 1(8e39bac2-59b4-46b6-9ca2-2113cc89b277)'
   webAppName: 'a2-check-in'
-  environmentName: 'Production'
 stages:
   - stage: Build
     displayName: Build stage
@@ -46,7 +45,6 @@ stages:
     jobs:
       - deployment: Deploy
         displayName: Deploy
-        environment: $(environmentName)
         pool: local-host
         strategy:
           runOnce:
