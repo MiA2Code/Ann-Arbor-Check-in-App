@@ -47,7 +47,7 @@ stages:
       - deployment: Deploy
         displayName: Deploy
         pool: local-host
-        environment:
+        environment: $(environmentName)
         strategy:
           runOnce:
             deploy:
