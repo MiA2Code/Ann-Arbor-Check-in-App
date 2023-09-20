@@ -57,4 +57,4 @@ jobs:
           app-name: 'a2-check-in'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_87F0CBD6F4F14582B510BFAB276614AC }}
-          package: .
+          package: 'build'
