@@ -7,6 +7,7 @@
 		"@esri/calcite-components": "^1.8.0",
 		"@esri/calcite-components-react": "^1.8.0",
 		"@tanstack/react-query": "^4.35.3",
+		"@tanstack/react-query-devtools": "^4.35.3",
 		"@testing-library/jest-dom": "^5.17.0",
 		"@testing-library/react": "^13.4.0",
 		"@testing-library/user-event": "^13.5.0",
@@ -28,12 +29,14 @@
 		"start:prod": "env-cmd -f .env.production react-scripts start",
 		"build": "react-scripts build",
 		"build:dev": "env-cmd -f .env.development react-scripts build",
+		"build:prod": "env-cmd -f .env.production react-scripts build",
 		"test": "react-scripts test",
 		"eject": "react-scripts eject",
 		"lint": "tsc --noEmit && eslint src/**/*.ts{,x} --cache --max-warnings=0",
 		"lint:fix": "eslint src/**/*.ts{,x} --fix",
 		"sass-dev": "sass --watch --update --style=expanded assets/scss:assets/css",
-		"sass-prod": "sass --no-source-map --style=compressed assets/scss:assets/css"
+		"sass-prod": "sass --no-source-map --style=compressed assets/scss:assets/css",
+		"serve": "npx serve ./build"
 	},
 	"eslintConfig": {
 		"extends": [
