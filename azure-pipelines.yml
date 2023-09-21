@@ -7,9 +7,12 @@ trigger:
   - main
 
 variables:
-  azureSubscription: 'Azure subscription 1(8e39bac2-59b4-46b6-9ca2-2113cc89b277)'
+  - group: aacia-kv-group
+    name: aacia-azure-subscription
+    value: $[variables.subscription]
   webAppName: 'a2-check-in'
   environmentName: 'a2-check-in-UI'
+
 stages:
   - stage: Build
     displayName: Build stage
@@ -55,7 +58,7 @@ stages:
                 - task: AzureRmWebAppDeployment@4
                   inputs:
                     ConnectionType: 'AzureRM'
-                    azureSubscription: 'Azure subscription 1(8e39bac2-59b4-46b6-9ca2-2113cc89b277)'
+                    azureSubscription: $(subscription)
                     appType: 'webApp'
                     WebAppName: 'a2-check-in'
                     deployToSlotOrASE: true
