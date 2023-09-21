@@ -1,0 +1,10 @@
+trigger:
+  branches:
+    include:
+      - main
+      - develop
+      - feature/*
+      - bugfix/*
+      - hotfix/*
+      - release/release-*
+  batch: true

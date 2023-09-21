@@ -11,6 +11,13 @@
 # production
 /build
 
+# Package calcite assets
+/public/calcite/assets
+/public/assets
+
+# Python crawled files
+/python-scripts/temp-folder
+
 # misc
 .DS_Store
 .env.local
