@@ -9,5 +9,9 @@
 	"prettier.printWidth": 80,
 	"prettier.endOfLine": "auto",
 	"editor.tabSize": 2,
-	"editor.codeActionsOnSave": ["source.formatDocument", "source.fixAll.eslint"]
+	"editor.codeActionsOnSave": ["source.formatDocument", "source.fixAll.eslint"],
+	"[python]": {
+		"editor.defaultFormatter": "ms-python.python"
+	},
+	"python.analysis.typeCheckingMode": "off"
 }
