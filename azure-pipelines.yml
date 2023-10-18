@@ -6,6 +6,9 @@
 trigger:
   - main
 
+pool:
+  vmImage: windows-latest
+
 variables:
   azureSubscription: 'Azure subscription 1'
   webAppName: 'a2-check-in'
@@ -16,7 +19,6 @@ stages:
     jobs:
       - job: Build
         displayName: Build
-        pool: local-host
 
         steps:
           - task: NodeTool@0
@@ -46,7 +48,6 @@ stages:
     jobs:
       - deployment: Deploy
         displayName: Deploy
-        pool: local-host
         environment: $(environmentName)
         strategy:
           runOnce:
