@@ -13,7 +13,6 @@ variables:
   azureSubscription: 'Azure subscription 1'
   webAppName: 'a2-check-in'
   environmentName: 'a2-check-in-UI'
-
 stages:
   - stage: Build
     displayName: Build stage
