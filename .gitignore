@@ -16,7 +16,7 @@
 /public/assets
 
 # Python crawled files
-/python-scripts/temp-folder
+/python-scripts
 
 # misc
 .DS_Store

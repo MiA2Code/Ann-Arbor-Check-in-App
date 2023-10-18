@@ -1,7 +1,6 @@
 import React from 'react';
-import { MapViewDiv } from './components/arcgis/MapViewDiv';
 import './css/globel.scss';
-import { Shell } from './components/calcite/calciteShell';
+import { Shell } from './components/calcite/Shell';
 import { CalciteLoader } from '@esri/calcite-components-react';
 import '@esri/calcite-components/dist/components/calcite-loader';
 function App() {
