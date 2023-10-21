@@ -7,7 +7,7 @@ import {
 } from '@esri/calcite-components-react';
 import '@esri/calcite-components/dist/components/calcite-action';
 import '@esri/calcite-components/dist/components/calcite-action-bar';
-import '@esri/calcite-components/dist/components/calcite-shell';
+import '@esri/calcite-components/dist/components/calcite-panel';
 import '@esri/calcite-components/dist/components/calcite-shell-panel';
 
 import '../../css/leftrail.scss';
@@ -74,10 +74,10 @@ export const Leftrail = () => {
 							key={index}
 							heading={item.panelHeader}
 							data-panel-id={`${item.id}`}
+							hidden
 							closed
-							// hidden
-							// closable
-							// onCalcitePanelClose={panelCloseHander}
+							closable
+							onCalcitePanelClose={panelCloseHander}
 						>
 							<div
 								className="leftrail-panel-container"

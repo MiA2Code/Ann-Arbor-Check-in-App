@@ -25,6 +25,9 @@ export class BaseView {
 			popup: {
 				defaultPopupTemplateEnabled: true,
 			},
+			padding: {
+				left: 49,
+			},
 		});
 	}
 
