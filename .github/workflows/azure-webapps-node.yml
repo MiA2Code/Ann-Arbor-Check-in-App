@@ -49,7 +49,7 @@ jobs:
 
     - name: Zip build artifacts
       run: |
-        zip -r build.zip .   # You can customize the zip command as needed
+        zip -r build.zip ./build/   # You can customize the zip command as needed
         mv build.zip $GITHUB_WORKSPACE  # Move the zip file to the workspace
 
     - name: Upload artifact for deployment job
