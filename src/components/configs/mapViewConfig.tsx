@@ -22,6 +22,9 @@ export class BaseView {
 					ymin: process.env.REACT_APP_MAP_DEFAULT_EXTEND_MIN_Y,
 				}),
 			},
+			popup: {
+				defaultPopupTemplateEnabled: true,
+			},
 		});
 	}
 
