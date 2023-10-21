@@ -11,7 +11,7 @@ pool:
 
 variables:
   azureSubscription: 'Azure subscription 1'
-  webAppName: 'a2-check-in'
+  webAppName: 'a2-check-in-dev'
   environmentName: 'a2-check-in-UI'
 stages:
   - stage: Build
@@ -58,7 +58,7 @@ stages:
                     ConnectionType: 'AzureRM'
                     azureSubscription: $(azureSubscription)
                     appType: 'webApp'
-                    WebAppName: 'a2-check-in'
+                    WebAppName: $(webAppName)
                     deployToSlotOrASE: true
                     ResourceGroupName: 'MiA2Code-AACIA'
                     SlotName: 'production'
