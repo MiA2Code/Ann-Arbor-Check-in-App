@@ -10,12 +10,14 @@ import '@esri/calcite-components/dist/components/calcite-action-bar';
 import '@esri/calcite-components/dist/components/calcite-shell';
 import '@esri/calcite-components/dist/components/calcite-shell-panel';
 
+import '../../css/leftrail.scss';
+
 interface LeftrailButtonPanel {
 	id: string;
 	actionText: string;
-	panelId: string;
 	panelHeader: string;
 	icon: string;
+	container: string;
 }
 
 const leftrailProps = [
@@ -24,15 +26,25 @@ const leftrailProps = [
 		actionText: 'Detail',
 		panelHeader: 'Detail',
 		icon: 'information',
+		container: 'detail-container',
 	},
 	{
 		id: 'layer',
 		actionText: 'Layers',
 		panelHeader: 'Layers',
 		icon: 'layers',
+		container: 'layers-container',
 	},
 ] as LeftrailButtonPanel[];
-
+// eslint-disble-next-line
+function panelCloseHander(event: any) {
+	const panel = event.target as HTMLCalcitePanelElement;
+	const id = panel.getAttribute('data-panel-id');
+	const button = document.querySelector(
+		`[data-action-id=${id}]`
+	) as HTMLCalciteActionElement;
+	button.active = false;
+}
 export const Leftrail = () => {
 	return (
 		<CalciteShellPanel
@@ -47,7 +59,7 @@ export const Leftrail = () => {
 						return (
 							<CalciteAction
 								key={index}
-								data-action-id={`${item.id}-action`}
+								data-action-id={`${item.id}`}
 								text={item.actionText}
 								icon={item.icon}
 							></CalciteAction>
@@ -61,10 +73,16 @@ export const Leftrail = () => {
 						<CalcitePanel
 							key={index}
 							heading={item.panelHeader}
-							data-panel-id={`${item.id}-panel`}
-							hidden
+							data-panel-id={`${item.id}`}
+							closed
+							// hidden
+							// closable
+							// onCalcitePanelClose={panelCloseHander}
 						>
-							<div id={`${item.id}-container`}></div>
+							<div
+								className="leftrail-panel-container"
+								id={`${item.container}`}
+							></div>
 						</CalcitePanel>
 					);
 				})}
