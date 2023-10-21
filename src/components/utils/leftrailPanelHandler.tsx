@@ -1,36 +1,51 @@
-import Map from '@arcgis/core/Map';
+import type MapView from '@arcgis/core/views/MapView';
 
-export default function LeftrailPanelHandler(map: Map) {
+export default function LeftrailPanelHandler(view: MapView) {
+	// eslint-disable-next-line
 	let activeWidget: any;
-
-	const handleActionBarClick = ({ target }) => {
+	// eslint-disable-next-line
+	const handleActionBarClick = ({ target }: any) => {
 		if (target.tagName !== 'CALCITE-ACTION') {
 			return;
 		}
 
+		let button = document.querySelector(
+			`[data-action-id=${activeWidget}]`
+		) as HTMLCalciteActionElement;
+		let panel = document.querySelector(
+			`[data-panel-id=${activeWidget}]`
+		) as HTMLCalcitePanelElement;
+
+		// eslint-disable-next-line
 		if (activeWidget) {
-			(
-				document.querySelector(
-					`[data-action-id=${activeWidget}]`
-				) as HTMLCalciteActionElement
-			).active = false;
-			document.querySelector(`[data-panel-id=${activeWidget}]`).hidden = true;
+			button.active = false;
+			panel.hidden = true;
 		}
 
 		const nextWidget = target.dataset.actionId;
+
+		button = document.querySelector(
+			`[data-action-id=${nextWidget}]`
+		) as HTMLCalciteActionElement;
+		panel = document.querySelector(
+			`[data-panel-id=${nextWidget}]`
+		) as HTMLCalcitePanelElement;
+
 		if (nextWidget !== activeWidget) {
-			document.querySelector(`[data-action-id=${nextWidget}]`).active = true;
-			document.querySelector(`[data-panel-id=${nextWidget}]`).hidden = false;
+			button.active = true;
+			panel.hidden = false;
+			// panel.closed = false;
 			activeWidget = nextWidget;
 		} else {
 			activeWidget = null;
 		}
 	};
 
-	document
-		.querySelector('calcite-action-bar')
-		.addEventListener('click', handleActionBarClick);
-
+	const actionBar = document.querySelector(
+		'calcite-action-bar'
+	) as HTMLCalciteActionBarElement;
+	actionBar.addEventListener('click', handleActionBarClick);
+	// eslint-disable-next-line
 	let actionBarExpanded = false;
 
 	document.addEventListener('calciteActionBarToggle', (event) => {
@@ -40,6 +55,12 @@ export default function LeftrailPanelHandler(map: Map) {
 		};
 	});
 
-	document.querySelector('calcite-shell').hidden = false;
-	document.querySelector('calcite-loader').hidden = true;
+	const shell = document.querySelector(
+		'calcite-shell'
+	) as HTMLCalciteShellElement;
+	shell.hidden = false;
+	const loader = document.querySelector(
+		'calcite-loader'
+	) as HTMLCalciteLoaderElement;
+	loader.hidden = true;
 }
