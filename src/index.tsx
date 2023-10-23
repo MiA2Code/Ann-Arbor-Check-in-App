@@ -6,8 +6,12 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 import { setAssetPath } from '@esri/calcite-components/dist/components';
-// CDN hosted assets
-setAssetPath(window.location.href);
+
+if (process.env.REACT_APP_CALCLITE_ASSET_PATH === 'local') {
+	setAssetPath(window.location.href);
+} else {
+	setAssetPath('https://js.arcgis.com/calcite-components/1.9.2/assets');
+}
 
 const root = createRoot(document.getElementById('root') as HTMLElement);
 
