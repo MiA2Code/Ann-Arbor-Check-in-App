@@ -16,7 +16,7 @@ stages:
     jobs:
       - job: Build
         displayName: Build
-        pool: local-host
+        pool: windows-latest
 
         steps:
           - task: NodeTool@0
@@ -46,7 +46,7 @@ stages:
     jobs:
       - deployment: Deploy
         displayName: Deploy
-        pool: local-host
+        pool: windows-latest
         environment: $(environmentName)
         strategy:
           runOnce:
