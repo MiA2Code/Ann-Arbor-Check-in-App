@@ -3,8 +3,7 @@ declare global {
 		interface ProcessEnv {
 			NODE_ENV: 'development' | 'production' | 'test';
 
-			REACT_APP_TESTING: string;
-
+			REACT_APP_CALCLITE_ASSET_PATH: string;
 			REACT_APP_MAP_DEFAULT_ZOOM: number;
 			REACT_APP_MAP_DEFAULT_CENTER_X: number;
 			REACT_APP_MAP_DEFAULT_CENTER_Y: number;
