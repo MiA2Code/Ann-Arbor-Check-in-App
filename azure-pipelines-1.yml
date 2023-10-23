@@ -10,13 +10,17 @@ variables:
   azureSubscription: 'Azure subscription 1'
   webAppName: 'a2-check-in'
   environmentName: 'a2-check-in-UI'
+
+pool:
+  vmImage: windows-latest
+
 stages:
   - stage: Build
     displayName: Build stage
     jobs:
       - job: Build
         displayName: Build
-        pool: windows-latest
+ 
 
         steps:
           - task: NodeTool@0
@@ -46,7 +50,6 @@ stages:
     jobs:
       - deployment: Deploy
         displayName: Deploy
-        pool: windows-latest
         environment: $(environmentName)
         strategy:
           runOnce:
