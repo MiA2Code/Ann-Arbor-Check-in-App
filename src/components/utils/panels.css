@@ -1,0 +1,59 @@
+.boldText {
+	font-weight: bold;
+}
+.large-title {
+	--calcite-font-size--1: 24px;
+	padding: 10px 10px 10px 0px;
+}
+.contentContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	gap: 10px;
+	min-width: 180px;
+	padding: 7px 19px 19px 19px;
+}
+
+.line {
+	border-bottom: 1px solid lightgray;
+}
+
+a {
+	font-size: 0.75rem;
+	color: #0072ce;
+}
+
+.textGrouping {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+.container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-content: center;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 10px;
+}
+
+
+
+.title {
+	font-size: 24px;
+	padding: 10px;
+}
+
+.contentContainer calcite-label calcite-icon:hover {
+	--calcite-ui-icon-color: #0072ce;
+	cursor: pointer;
+}
+
+.dashboard-container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	padding: 10px;
+}

@@ -20,7 +20,7 @@ interface LeftrailButtonPanel {
 	container: string;
 }
 
-const leftrailProps = [
+export const leftRailProps = [
 	{
 		id: 'detail',
 		actionText: 'Detail',
@@ -34,6 +34,13 @@ const leftrailProps = [
 		panelHeader: 'Layers',
 		icon: 'layers',
 		container: 'layers-container',
+	},
+	{
+		id: 'legend',
+		actionText: 'Legend',
+		panelHeader: 'Legend',
+		icon: 'legend',
+		container: 'legends-container',
 	},
 ] as LeftrailButtonPanel[];
 // eslint-disble-next-line
@@ -55,7 +62,7 @@ export const Leftrail = () => {
 		>
 			<CalciteActionBar slot="action-bar">
 				<>
-					{leftrailProps.map((item, index) => {
+					{leftRailProps.map((item, index) => {
 						return (
 							<CalciteAction
 								key={index}
@@ -68,7 +75,7 @@ export const Leftrail = () => {
 				</>
 			</CalciteActionBar>
 			<>
-				{leftrailProps.map((item, index) => {
+				{leftRailProps.map((item, index) => {
 					return (
 						<CalcitePanel
 							key={index}

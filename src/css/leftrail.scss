@@ -1,3 +1,30 @@
 .leftrail-panel-container {
 	height: 100vh;
 }
+
+// .icon {
+// 	--calcite-ui-text-3: #0072ce;
+// }
+
+.legend div[class~='esri-legend__layer'] {
+	overflow: hidden;
+}
+
+// .container {
+// 	--calcite-ui-text-3: #0072ce;
+// 	--calcite-font-size-0: 20px;
+// }
+
+// .panel {
+// 	height: 100vh;
+// 	background-color: white;
+// }
+
+.mapUpdate {
+	font-size: 12px;
+	background-color: #f6f6f6;
+	border-radius: 5px;
+	margin: 20px 5px 20px 5px;
+	padding: 10px;
+	text-align: center;
+}

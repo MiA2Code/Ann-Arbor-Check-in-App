@@ -10,3 +10,147 @@ body,
 	height: 100%;
 	width: 100%;
 }
+
+@import '@arcgis/core/assets/esri/css/main.css';
+:root {
+	color-scheme: light dark;
+}
+html,
+body {
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	padding: 0;
+	margin: 0;
+	color: #2b2b2b;
+
+	--calcite-ui-brand: #1e3575;
+	--calcite-ui-border-input: #0072ce;
+}
+.mockData {
+	--calcite-ui-text-1: #ff0909;
+}
+.ppsReportContainer {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+/* ArcGIS search widget style */
+.esri-search {
+	height: 5rem;
+	width: 35rem;
+	background-color: #efefef;
+}
+
+.esri-search__container {
+	padding: 0px 20px;
+}
+
+.esri-input.esri-search__input {
+	height: 3rem;
+}
+
+.esri-search__warning-menu {
+	height: 20vh;
+	left: 12%;
+	width: 75.5%;
+	top: 97%;
+}
+
+.esri-search__submit-button {
+	height: 3rem;
+	width: 3rem;
+	border-radius: 0px 50px 50px 0px;
+	border-left: solid 0px;
+	color: #0072ce;
+}
+
+.esri-search__sources-button {
+	height: 3rem;
+	width: 3rem;
+	color: #0072ce;
+	border-right: solid 0px;
+	border-radius: 50px 0px 0px 50px;
+	border-right: solid 0px;
+	color: #0072ce;
+}
+
+.esri-search__clear-button {
+	height: 3rem;
+}
+
+.esri-icon-search,
+.esri-search__sources-button--down {
+	font-weight: bold;
+}
+/* PopupTemplate style */
+.esri-popup {
+	border-radius: 8px;
+	box-shadow: 0px 1px 3px #0000004d;
+}
+
+.esri-popup:has(.priorityCode) {
+	border: 2px solid red;
+}
+
+// .esri-popup__footer {
+// 	display: none;
+// }
+
+.esri-popup__header-container--button {
+	pointer-events: none !important;
+}
+
+.esri-popup__collapse-icon {
+	display: none;
+}
+h2.esri-widget__heading {
+	font-size: 20px;
+}
+.esri-popup__header-title {
+	text-transform: capitalize;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+	padding-left: 12px;
+}
+
+.esri-popup__icon::before {
+	color: #0072ce !important;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.esri-popup__main-container {
+	min-height: 100px !important;
+	width: fit-content !important;
+	max-height: fit-content !important;
+	border-radius: 8px !important;
+}
+
+.esri-popup__content {
+	margin: 0 !important;
+	padding: 0 !important;
+	border-radius: 8px !important;
+	/* overflow: visible !important; */
+}
+
+.esri-popup__pointer {
+	display: none;
+}
+
+/* ArcGIS home widget */
+.esri-home.esri-widget--button {
+	border-radius: 10px;
+}
+/* Modal style */
+calcite-modal {
+	--calcite-modal-content-padding: 10px;
+	--calcite-modal-scrim-background: gray;
+	/* Modal title text size */
+	--calcite-modal-title-text-internal: 1.5rem;
+}
+
+/* Set all calcite label's margin bottom to 0px */
+calcite-label {
+	--calcite-label-margin-bottom: 0px;
+}
