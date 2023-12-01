@@ -3,6 +3,7 @@ import PictureMarkerSymbol from '@arcgis/core/symbols/PictureMarkerSymbol.js';
 import icon from '../../icons/restaurant.png';
 export const RestaurantLayerConfig: __esri.FeatureLayerProperties = {
 	url: process.env.REACT_APP_FEATURE_LAYER_RESTAURANT,
+	outFields: ['*'],
 	popupEnabled: true,
 	renderer: new SimpleRenderer({
 		symbol: new PictureMarkerSymbol({
