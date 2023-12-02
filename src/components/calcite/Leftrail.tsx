@@ -7,7 +7,7 @@ import {
 } from '@esri/calcite-components-react';
 import '@esri/calcite-components/dist/components/calcite-action';
 import '@esri/calcite-components/dist/components/calcite-action-bar';
-import '@esri/calcite-components/dist/components/calcite-shell';
+import '@esri/calcite-components/dist/components/calcite-panel';
 import '@esri/calcite-components/dist/components/calcite-shell-panel';
 
 import '../../css/leftrail.scss';
@@ -20,7 +20,7 @@ interface LeftrailButtonPanel {
 	container: string;
 }
 
-const leftrailProps = [
+export const leftRailProps = [
 	{
 		id: 'detail',
 		actionText: 'Detail',
@@ -34,6 +34,13 @@ const leftrailProps = [
 		panelHeader: 'Layers',
 		icon: 'layers',
 		container: 'layers-container',
+	},
+	{
+		id: 'legend',
+		actionText: 'Legend',
+		panelHeader: 'Legend',
+		icon: 'legend',
+		container: 'legends-container',
 	},
 ] as LeftrailButtonPanel[];
 // eslint-disble-next-line
@@ -55,7 +62,7 @@ export const Leftrail = () => {
 		>
 			<CalciteActionBar slot="action-bar">
 				<>
-					{leftrailProps.map((item, index) => {
+					{leftRailProps.map((item, index) => {
 						return (
 							<CalciteAction
 								key={index}
@@ -68,16 +75,16 @@ export const Leftrail = () => {
 				</>
 			</CalciteActionBar>
 			<>
-				{leftrailProps.map((item, index) => {
+				{leftRailProps.map((item, index) => {
 					return (
 						<CalcitePanel
 							key={index}
 							heading={item.panelHeader}
 							data-panel-id={`${item.id}`}
+							hidden
 							closed
-							// hidden
-							// closable
-							// onCalcitePanelClose={panelCloseHander}
+							closable
+							onCalcitePanelClose={panelCloseHander}
 						>
 							<div
 								className="leftrail-panel-container"

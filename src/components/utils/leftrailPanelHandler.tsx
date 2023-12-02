@@ -34,7 +34,7 @@ export default function LeftrailPanelHandler(view: MapView) {
 		if (nextWidget !== activeWidget) {
 			button.active = true;
 			panel.hidden = false;
-			// panel.closed = false;
+			panel.closed = false;
 			activeWidget = nextWidget;
 		} else {
 			activeWidget = null;
