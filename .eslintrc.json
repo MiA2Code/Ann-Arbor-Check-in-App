@@ -33,6 +33,7 @@
 		"@typescript-eslint/no-explicit-any": "off",
 		"@typescript-eslint/strict-boolean-expressions": "off",
 		"@typescript-eslint/no-unnecessary-type-assertion": "off",
+		"@typescript-eslint/consistent-type-imports": "off",
 		"no-useless-call": "off",
 		"prettier/prettier": [
 			"error",

@@ -1,10 +1,19 @@
 import type Map from '@arcgis/core/Map';
 import MapView from '@arcgis/core/views/MapView';
 import Extent from '@arcgis/core/geometry/Extent.js';
+import RestaurantClass from './RestaurantLayerClass';
+import FeatureLayer from '@arcgis/core/layers/FeatureLayer';
+import { ParkLayerConfig } from './parkLayerConfig';
 
 export class BaseView {
 	view: MapView;
 	constructor(map: Map, container: string) {
+		const restLayerConfig = RestaurantClass();
+		const restaurantLayer = restLayerConfig.layer;
+		const parkLayer = new FeatureLayer(ParkLayerConfig);
+
+		map.add(restaurantLayer);
+		map.add(parkLayer);
 		this.view = new MapView({
 			map,
 			container,
